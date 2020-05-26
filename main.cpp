@@ -45,7 +45,7 @@ public:
     void move(vector<Organism> &world, vector<Ant> &ants);
     void breed(vector<Organism> &world, vector<Doodlebug> &doodlebugs, int &timeStep);
     int getLastEaten() {return lastEaten; };
-    int setLastEaten(int newEatenValue) {lastEaten = newEatenValue; };
+    void setLastEaten(int newEatenValue) {lastEaten = newEatenValue; };
     void starve(vector<Organism> &world, vector<Doodlebug> &doodlebugs);
 };
 
@@ -76,11 +76,13 @@ int main() {
 
     Grid newWorld;
 
-    for(int i = 0; i < 20; i++) {
+    //Initialize ants
+    for(int i = 0; i < 100; i++) {
         newWorld.addAnt();
     }
 
-    for(int i = 0; i < 30; i++){
+    //Initialize doodlebugs
+    for(int i = 0; i < 5; i++){
         newWorld.addDoodlebug();
     }
 
